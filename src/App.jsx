@@ -54,11 +54,12 @@ function App() {
     console.log(res.data)
      getAllUsers()
     }).catch(error => {
+      console.log(res.data);
       setError(error);
     }); 
     
  }
- 
+
   return (
     <div className="App">
       <h1>Users CRUD</h1>
