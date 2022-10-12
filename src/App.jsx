@@ -6,7 +6,7 @@ import FormUsers from './components/FormUsers'
 import UserCard from './components/UserCard'
 
 
-const baseURL = 'http://144.126.218.162:9000/swagger'
+const baseURL = 'http://144.126.218.162:9000'
 
 function App() {
 
