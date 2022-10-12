@@ -13,6 +13,7 @@ function App() {
   //primero haremos un get, y como lo usaremos varias veces lo metemos dentro de una funcion
   const [users, setusers] = useState()
   const [updateInfo, setUpdateInfo] = useState()
+  const [formIsClose, setFormIsClose] = useState(true)
 
   const getAllUsers = () => {
     const URL =`${baseURL}/users/`
@@ -60,16 +61,24 @@ function App() {
     }); 
     
  }
-
+ const handleOpenForm = () => {
+  setFormIsClose(false)
+ }
+ 
   return (
     <div className="App">
-      <h1>Users CRUD</h1>
-      <div className='form__container'>
+      <div className='app__container-title'>
+          <h1 className='app_title'>Users CRUD</h1>
+          <button onClick={handleOpenForm} className='app__btn'>Create a New User</button>
+      </div>
+   
+      <div className={`form__container ${formIsClose && 'form__disable'}`}>
         <FormUsers 
           createNewUser={createNewUser}
           updateInfo={updateInfo}
           updateUserById={updateUserById}
           setUpdateInfo={setUpdateInfo}
+          setFormIsClose={setFormIsClose}
         />
       </div>
      
@@ -81,6 +90,7 @@ function App() {
           user={user}
           deleteUserById={deleteUserById}
           setUpdateInfo={setUpdateInfo}
+          setFormIsClose={setFormIsClose}
           />
         ))
       }
