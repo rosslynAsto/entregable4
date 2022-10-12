@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import './styles/FormUsers.css'
+import './styles/formUsers.css'
 
 const defaultValues = {
     email: '',
